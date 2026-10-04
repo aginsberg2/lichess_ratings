@@ -22,6 +22,7 @@ whether the Elo *formula* still predicts results from Glicko-2 ratings.
 - A survey of every header in the full file found 17 fields. `WhiteTitle` and
   `BlackTitle` appear only when a titled player is in the game
   (WhiteTitle: ___ games, BlackTitle: ___ games).
+
 - Missing values are written as `"?"` (for example, ECO and Opening), not left blank.
 - Abandoned games contain no moves but are still rated.
 - `Event` combines speed and tournament status, and no "Rapid" category exists
