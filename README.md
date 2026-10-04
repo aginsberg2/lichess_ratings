@@ -71,9 +71,11 @@ Run everything from the project root.
 ```
    Compare with the 2016-01 entry in
    [Lichess's published checksums](https://database.lichess.org/standard/sha256sums.txt).
+   
 5. **Extract game headers to CSV**
 ```bash
    python src/extract_headers.py
 ```
    Expected output: `Wrote 4,770,357 games to data/processed/games.csv` (about 2 minutes for me).
+   
 6. **Load and analyze in DuckDB**: to come. SQL files in `sql/` run in numbered order.
