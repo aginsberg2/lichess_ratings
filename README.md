@@ -25,9 +25,10 @@ whether the Elo *formula* still predicts results from Glicko-2 ratings.
   `BlackTitle` appear only when a titled player is in the game
   (WhiteTitle: 30,424 games, BlackTitle: 30,424 games).
 - The full extract wrote 4,770,357 games, matching the official count, in 1.7 minutes.
-- The file spans 23:00 UTC Dec 31 to 23:00 UTC Jan 31, likely because months are cut at midnight Central European Time (to be confirmed in validation).
+- All 4,770,357 games fall between 2015-12-31 23:00:00 and 2016-01-31 22:59:59 UTC, verified across every game. The 5,124 games (0.11%) dated Dec 31 UTC are consistent with Lichess cutting monthly files at midnight Central European Time, and are kept.
 - Titles include Lichess's own honorary "LM" title alongside official FIDE and national titles.
 - Missing values are written as `"?"` (for example, ECO and Opening), not left blank.
+- 2016 opening names use numbered suffixes (#2) and commas; normalized into 168 families (from 349).
 - "Abandoned” games ended because a player left; some contain moves, some don’t.
 - `Event` combines speed and tournament status, and no "Rapid" category exists
   in 2016, so speed is derived from `TimeControl` instead.
