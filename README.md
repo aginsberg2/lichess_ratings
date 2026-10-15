@@ -1,4 +1,6 @@
-# Do Lichess Ratings Predict Who Wins?
+# Do Lichess Ratings Predict Who Wins?\
+
+## Status: in progress. Data validation underway.
 
 ## Question
 How well does the standard Elo win-probability formula,
@@ -21,20 +23,21 @@ whether the Elo *formula* still predicts results from Glicko-2 ratings.
 ## Data notes (running log)
 - A survey of every header in the full file found 17 fields. `WhiteTitle` and
   `BlackTitle` appear only when a titled player is in the game
-  (WhiteTitle: ___ games, BlackTitle: ___ games).
+  (WhiteTitle: 30,424 games, BlackTitle: 30,424 games).
 - The full extract wrote 4,770,357 games, matching the official count, in 1.7 minutes.
-- The file spans 23:00 UTC Dec 31 to 23:00 UTC Jan 31, likely because months are cut at midnight Central European Time (to be confirmed in Step 12).
+- The file spans 23:00 UTC Dec 31 to 23:00 UTC Jan 31, likely because months are cut at midnight Central European Time (to be confirmed in validation).
 - Titles include Lichess's own honorary "LM" title alongside official FIDE and national titles.
 - Missing values are written as `"?"` (for example, ECO and Opening), not left blank.
-- Abandoned games contain no moves but are still rated.
+- "Abandoned” games ended because a player left; some contain moves, some don’t.
 - `Event` combines speed and tournament status, and no "Rapid" category exists
   in 2016, so speed is derived from `TimeControl` instead.
 - Arena tournaments allow "berserk" (a player halves their own clock), so
   `TimeControl` can overstate the actual time in tournament games.
-- The file begins with games dated 2015-12-31.
+- Of the 1,230,129 games labeled “Classical” in 2016, 93% are Rapid by modern rules.
+- Titled players appear in 57,924 games (1.2%): WhiteTitle is present in 30,424 games and BlackTitle in 30,424, with 2,924 games where both players are titled. Oddly, the counts are exactly symmetric by color (27,500 games each). Observed but not investigated further.
 
 ## Cleaning decisions
-To come (Step 12), each with the number of games it removes.
+- Checked for duplicates: none found, 0 games removed
 
 ## Findings
 To come.
